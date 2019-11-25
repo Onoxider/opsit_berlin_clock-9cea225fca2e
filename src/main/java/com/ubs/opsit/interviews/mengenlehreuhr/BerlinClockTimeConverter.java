@@ -50,7 +50,7 @@ public class BerlinClockTimeConverter implements TimeConverter {
      * @param maxValue - max possible value for current timeunit
      * @param color - color of lamps
      * @param isReplacementWithRedRequired - enables changing light for every 3rd lamp in fiveUnits line
-     * @return String representation
+     * @return Berlin clock representation for a given timeunit
      */
     private String getLamps(int units, int maxValue,  String color, boolean isReplacementWithRedRequired) {
 
