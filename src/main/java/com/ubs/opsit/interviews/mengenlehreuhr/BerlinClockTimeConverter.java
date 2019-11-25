@@ -57,17 +57,17 @@ public class BerlinClockTimeConverter implements TimeConverter {
     private String getLamps(int units, int maxValue,  String color, boolean isReplacementWithRedRequired) {
 
         LOG.debug("Calculating lamps for {} units, having max {} units with {} as primary color.", units, maxValue, color);
-        int fiveUnitsLampsActiveNumber = units / 5;
+        int fiveUnitsLampsActive = units / 5;
         int fiveUnitsLampsOff          = (maxValue - units) / 5;
-        int oneUnitLampsActiveNumber   = units % 5;
+        int oneUnitLampsActive   = units % 5;
         int oneUnitLampsOff            = (maxValue - units) % 5;
 
-        String fiveUnitsActiveLamps = repeat(color, fiveUnitsLampsActiveNumber);
-        if (isReplacementWithRedRequired && YELLOW.equals(color)) {
+        String fiveUnitsActiveLamps = repeat(color, fiveUnitsLampsActive);
+        if (isReplacementWithRedRequired) {
             fiveUnitsActiveLamps = fiveUnitsActiveLamps.replaceAll(color + "{3}", color + color + RED);
         }
         String fiveUnitsLamps = fiveUnitsActiveLamps + repeat(OFF, fiveUnitsLampsOff);
-        String oneUnitLamps = repeat(color, oneUnitLampsActiveNumber) + repeat(OFF, oneUnitLampsOff);
+        String oneUnitLamps = repeat(color, oneUnitLampsActive) + repeat(OFF, oneUnitLampsOff);
 
         return String.join(LINE_SEPARATOR, fiveUnitsLamps, oneUnitLamps);
     }

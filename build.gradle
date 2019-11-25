@@ -7,7 +7,7 @@ apply plugin: 'eclipse'
 version = '1.0.0'
 group = 'com.ubs.opsit.interviews.berlinclock'
 
-task wrapper(type: Wrapper){
+wrapper {
     description = 'Generates gradlew scripts for NIX and win envs'
     gradleVersion = '2.0'
 }
