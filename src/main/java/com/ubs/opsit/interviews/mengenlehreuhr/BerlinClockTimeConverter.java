@@ -22,6 +22,7 @@ public class BerlinClockTimeConverter implements TimeConverter {
     private static final Logger LOG = LoggerFactory.getLogger(BerlinClockTimeConverter.class);
 
     /**
+     * Converts time from a 24h format to Berlin clock
      *
      * @param time - 24h time format between 00:00:00 and 24:00:00
      * @return String representing Berlin Clock
