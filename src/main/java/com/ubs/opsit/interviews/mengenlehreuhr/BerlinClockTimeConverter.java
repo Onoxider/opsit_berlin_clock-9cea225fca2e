@@ -31,7 +31,8 @@ public class BerlinClockTimeConverter implements TimeConverter {
     public String convertTime(String time) {
 
         if (time == null || !TIME_PATTERN.matcher(time).matches()) {
-            throw new IllegalArgumentException("invalid input: Time should fall within the range of  00:00:00 to 24:00:00");
+            LOG.info("{} is not a valid input", time);
+            throw new IllegalArgumentException("Time should fall within the range of  00:00:00 to 24:00:00");
         }
         List<Integer> timeParts = Stream.of(time.split(":"))
                 .map(Integer::parseInt)
@@ -55,6 +56,7 @@ public class BerlinClockTimeConverter implements TimeConverter {
      */
     private String getLamps(int units, int maxValue,  String color, boolean isReplacementWithRedRequired) {
 
+        LOG.debug("Calculating lamps for {} units, having max {} units with {} as primary color.", units, maxValue, color);
         int fiveUnitsLampsActiveNumber = units / 5;
         int fiveUnitsLampsOff          = (maxValue - units) / 5;
         int oneUnitLampsActiveNumber   = units % 5;
