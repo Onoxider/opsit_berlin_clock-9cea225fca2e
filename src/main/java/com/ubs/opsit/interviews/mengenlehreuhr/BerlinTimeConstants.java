@@ -2,7 +2,7 @@ package com.ubs.opsit.interviews.mengenlehreuhr;
 
 import java.util.regex.Pattern;
 
-public class Constants {
+public class BerlinTimeConstants {
 
     public static final String YELLOW = "Y";
     public static final String RED = "R";
