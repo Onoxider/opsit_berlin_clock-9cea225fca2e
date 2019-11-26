@@ -58,9 +58,9 @@ public class BerlinClockTimeConverter implements TimeConverter {
 
         LOG.debug("Calculating lamps for {} units, having max {} units with {} as primary color.", units, maxValue, color);
         int fiveUnitsLampsActive = units / 5;
-        int fiveUnitsLampsOff          = (maxValue - units) / 5;
+        int fiveUnitsLampsOff    = (maxValue - units) / 5;
         int oneUnitLampsActive   = units % 5;
-        int oneUnitLampsOff            = (maxValue - units) % 5;
+        int oneUnitLampsOff      = (maxValue - units) % 5;
 
         String fiveUnitsActiveLamps = repeat(color, fiveUnitsLampsActive);
         if (isReplacementWithRedRequired) {
